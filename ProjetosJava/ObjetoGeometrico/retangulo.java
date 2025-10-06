@@ -1,3 +1,5 @@
+package ObjetoGeometrico;
+
 public class retangulo implements ObjetoGeometrico {
     private double b,h;
     @Override

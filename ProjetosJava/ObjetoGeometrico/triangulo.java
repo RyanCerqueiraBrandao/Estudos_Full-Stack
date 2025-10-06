@@ -1,4 +1,6 @@
-public class triangulo implements ObjetoGeometrico{
+package ObjetoGeometrico;
+
+public class triangulo implements ObjetoGeometrico {
     private double a,b,c,s;
     @Override
     public double calcularArea(){
