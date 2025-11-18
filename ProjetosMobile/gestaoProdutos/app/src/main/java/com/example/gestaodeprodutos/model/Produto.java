@@ -1,4 +1,4 @@
-package com.example.gestaoprodutos;
+package com.example.gestaodeprodutos.model;
 
 public class Produto {
     private String nome;
@@ -8,6 +8,7 @@ public class Produto {
         this.nome = nome;
         this.preco = preco;
     }
+    public Produto() {}
 
     @Override
     public String toString() {

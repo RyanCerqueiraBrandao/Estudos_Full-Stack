@@ -1,4 +1,4 @@
-package com.example.gestaoprodutos;
+package com.example.gestaodeprodutos;
 
 import android.content.Context;
 
