@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan | Desenvolvedor de Sistemas</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIÁVEIS E RESET --- */
+        :root {
+            --bg-color: #050505;
+            --card-bg: rgba(20, 20, 25, 0.6);
+            --primary: #358ff5; /* O Cyan do seu GitHub */
+            --secondary: #0077ff; /* Azul mais escuro */
+            --accent: #7000ff; /* Roxo para contraste */
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 234, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(112, 0, 255, 0.1) 0%, transparent 20%);
+        }
+
+        /* --- UTILITÁRIOS --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .highlight {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+        }
+
+        /* --- CORREÇÃO DE ALINHAMENTO --- */
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center;
+            width: 100%; 
+            text-align: center;
+            left: auto;
+            transform: none;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin-top: 10px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 8px var(--primary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .typing-effect::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0%; height: 100%;
+            background: var(--primary);
+            z-index: -1;
+            transition: 0.4s;
+        }
+
+        .btn:hover::before { width: 100%; }
+        .btn:hover { color: #000; box-shadow: 0 0 20px var(--primary); }
+
+        /* --- ABOUT & EDUCATION --- */
+        .about { padding: 5rem 0; }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .edu-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .edu-item:last-child { border: none; margin: 0; padding: 0; }
+
+        .edu-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        /* --- SKILLS (HEXAGON GRID FEEL) --- */
+        .skills { padding: 5rem 0; position: relative; }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .skill-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .skill-box i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        /* Cores específicas para ícones */
+        .fa-python { color: #3776AB; }
+        .fa-java { color: #007396; }
+        .fa-js { color: #F7DF1E; }
+        .fa-html5 { color: #E34F26; }
+        .fa-css3-alt { color: #1572B6; }
+        .fa-database { color: #f29111; }
+        .fa-git-alt { color: #F05032; }
+
+        .skill-box:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
+        }
+        
+        .skill-box:hover i {
+            transform: rotateY(360deg);
+        }
+
+        /* --- CERTIFICATES --- */
+        .certs { padding: 5rem 0; }
+        
+        .certs-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .cert-img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .cert-img:hover {
+            transform: scale(1.2) rotate(5deg);
+            filter: drop-shadow(0 0 15px var(--primary));
+        }
+
+        /* --- FOOTER & CONTACT --- */
+        .footer {
+            padding: 4rem 0;
+            background: linear-gradient(to top, #000, transparent);
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            transition: 0.3s;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            cursor: pointer;
+        }
+
+        .social-btn:hover {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 0 20px var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .quote-box {
+            margin-top: 3rem;
+            font-style: italic;
+            color: var(--text-muted);
+            border-left: 3px solid var(--accent);
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+
+        /* --- ANIMAÇÕES SCROLL --- */
+        .hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">&lt;Ryan<span>Dev</span>/&gt;</a>
+                <ul class="nav-links">
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certs">Certificados</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hidden">Olá, eu sou <span class="highlight">Ryan Brandão</span></h1>
+            <p class="hidden">Estudante de <span class="typing-effect" id="typing-text"></span></p>
+            <div class="hidden" style="margin-top: 2rem;">
+                <a href="#contact" class="btn">Entrar em Contato</a>
+                <a href="https://github.com/RyanCerqueiraBrandao" target="_blank" class="btn" style="margin-left: 10px; border-color: #fff; color: #fff;">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title hidden">Sobre Mim</h2>
+            <div class="about-grid">
+                <div class="card hidden">
+                    <h3>🚀 Minha Jornada</h3>
+                    <br>
+                    <p style="color: var(--text-muted); line-height: 1.6;">
+                        Este é meu espaço para compartilhar projetos, estudos e experimentos de programação.
+                        Sou apaixonado por tecnologia e segurança da informação.
+                        Atualmente focado em me tornar um especialista em desenvolvimento de sistemas.
+                    </p>
+                    <br>
+                
+                </div>
+
+                <div class="card hidden">
+                    <h3>🎓 Formação Acadêmica</h3>
+                    <br>
+                    <div class="edu-item">
+                        <i class="fas fa-laptop-code edu-icon"></i>
+                        <div>
+                            <h4>Técnico em Desenv. de Sistemas</h4>
+                            <span style="color: var(--primary);">SENAI</span>
+                        </div>
+                    </div>
+                    <div class="edu-item">
+                        <i class="fas fa-university edu-icon"></i>
+                        <div>
+                            <h4>Sistemas de Informação (Meta)</h4>
+                            <span style="color: var(--primary);">IFBA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title hidden">Arsenal Tecnológico</h2>
+            
+            <h3 class="hidden" style="margin-bottom: 20px; color: var(--primary);">Linguagens</h3>
+            <div class="skills-container hidden">
+                <div class="skill-box"><i class="fab fa-python"></i><p>Python</p></div>
+                <div class="skill-box"><i class="fab fa-java"></i><p>Java</p></div>
+                <div class="skill-box"><i class="fab fa-android"></i><p>Kotlin</p></div> 
+                <div class="skill-box"><i class="fas fa-code"></i><p>C / C++</p></div>
+                <div class="skill-box"><i class="fab fa-html5"></i><p>HTML5</p></div>
+                <div class="skill-box"><i class="fab fa-css3-alt"></i><p>CSS3</p></div>
+            </div>
+
+            <br><br>
+
+            <h3 class="hidden" style="margin-bottom: 20px; color: var(--primary);">Ferramentas</h3>
+            <div class="skills-container hidden">
+                <div class="skill-box"><i class="fas fa-database"></i><p>SQL</p></div>
+                <div class="skill-box"><i class="fab fa-git-alt"></i><p>Git</p></div>
+                <div class="skill-box"><i class="fas fa-microchip"></i><p>Arduino</p></div>
+                <div class="skill-box"><i class="fas fa-cube"></i><p>Tinkercad</p></div>
+                <div class="skill-box"><i class="fas fa-laptop-code"></i><p>VS Code</p></div>
+                <div class="skill-box"><i class="fab fa-android"></i><p>Android Studio</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certs" class="certs">
+        <div class="container">
+            <h2 class="section-title hidden">Certificações & Badges</h2>
+            <div class="certs-grid hidden">
+                <a href="#" title="Network Defense"><img src="https://images.credly.com/size/340x340/images/51526f76-711b-4caf-b04d-27f89512b112/NetworkDefense_v1_091721.png" class="cert-img" alt="Network Defense"></a>
+                <a href="#" title="Network Basics"><img src="https://images.credly.com/size/340x340/images/5bdd6a39-3e03-4444-9510-ecff80c9ce79/image.png" class="cert-img" alt="Network Basics"></a>
+                <a href="#" title="Cybersecurity"><img src="https://images.credly.com/size/340x340/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/I2CS__1_.png" class="cert-img" alt="Cybersecurity"></a>
+                <a href="#" title="Data Science"><img src="https://images.credly.com/size/340x340/images/b38a42e0-dc58-4ce2-b6c0-28d978e8aaad/image.png" class="cert-img" alt="Data Science"></a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem;">Vamos codar juntos?</h2>
+            
+            <div class="social-links">
+                <a href="mailto:ryancerqueiradev@gmail.com" class="social-btn" title="Enviar E-mail">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/ryan-brand%C3%A3o-621619279/" target="_blank" class="social-btn" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                
+                <a href="https://github.com/RyanCerqueiraBrandao" target="_blank" class="social-btn" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="javascript:void(0)" class="social-btn" title="Discord: ry_xon (Clique para copiar)" onclick="copyDiscord()">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+
+            <div class="quote-box">
+                <p>Ryan Cerqueira Brandão © 2026</p>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+        // Função para copiar o Discord
+        function copyDiscord() {
+            navigator.clipboard.writeText("ry_xon");
+            alert("Discord copiado para a área de transferência: ry_xon");
+        }
+
+        // Efeito de Digitação
+        const textElement = document.getElementById('typing-text');
+        const texts = ["Desenvolvimento de Sistemas", "Segurança de Redes", "Tecnologia", "Inovação"];
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
+
+        (function type() {
+            if (count === texts.length) {
+                count = 0;
+            }
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+
+            textElement.textContent = letter;
+            if (letter.length === currentText.length) {
+                setTimeout(() => {
+                    count++;
+                    index = 0;
+                }, 2000);
+            }
+            setTimeout(type, 100);
+        })();
+
+        // Scroll Animation (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
