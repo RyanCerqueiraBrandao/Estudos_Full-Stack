@@ -1,0 +1,13 @@
+h1.azul{color:blue;font-family: monospace;text-align: center;}
+h1.vermelho{color:red;font-family:sans-serif;font-weight: bold;}
+
+a.classe1:link,a.classe1:visited{
+    text-decoration: darkblue ;
+}
+a.classe1:houver{
+    text-decoration: underline;
+    text-decoration: black;
+}
+a.classe1:active{
+    text-decoration: aqua;
+}
