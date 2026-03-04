@@ -43,6 +43,8 @@ header {
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
+    transition-duration: 1ms;
+
 }
 
 .menu a {
@@ -71,6 +73,12 @@ main > p {
     font-size: 1.1rem;
 }
 
+.sobre{
+    max-width: 800px;
+    margin: 20px auto;
+    align-items: center;
+
+}
 .destaques {
     display: flex;
     align-items: center;
@@ -141,6 +149,7 @@ fieldset {
 
 }
 
+
 legend {
     font-weight: bold;
     color: var(--primaria);
@@ -208,11 +217,14 @@ form > div {
     text-transform: uppercase;
     box-shadow: 0 6px 15px rgba(197, 22, 22, 0.3);
     margin: 20px 350px;
+    
 }
 
 .btn-inscrever:hover {
+    
     background-color: var(--texto);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
 }
 
 
