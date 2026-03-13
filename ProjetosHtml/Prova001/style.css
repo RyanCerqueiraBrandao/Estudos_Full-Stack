@@ -169,6 +169,13 @@ textarea {
     font-size: 1rem;
 }
 
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    margin-right: 5px;
+}
+
 .inline {
     display: flex;
     margin-top: 5px;
