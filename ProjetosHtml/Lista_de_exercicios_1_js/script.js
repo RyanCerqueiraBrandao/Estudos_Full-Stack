@@ -18,15 +18,15 @@ const pi = 3.14;
 
 
 function questao1(){
-    console.log("Ola,"+nome+"! Seja Bem Vindo ao Curso de JavaScript!");
+    console.log(`Ola,${nome}! Seja Bem Vindo ao Curso de JavaScript`);
 }
 
 function questao2(){
-    console.log("Voce tem "+[anoAtual-anoNascimento]+" anos.");
+    console.log(`Voce tem ${[anoAtual-anoNascimento]} anos.`);
 }
 
 function questao3(){
-    console.log("voce esta em "+cidade+"-"+estado+", "+pais+".");
+    console.log(`voce esta em ${cidade}-${estado}, ${pais}.`);
 }
 
 function questao4(){
@@ -34,7 +34,7 @@ function questao4(){
 }
 
 function questao5(){
-    console.log("Saldo atual: "+saldo);
+    console.log(`Saldo atual:  ${saldo}`);
     deposito=prompt("Valor a ser depositado: ");
     deposito = Number(deposito);
     saldo+=deposito;
@@ -45,12 +45,12 @@ function questao5(){
 
 function questao6(){
     let media = [matematica+portugues+ciencias]/3;
-    console.log("Media Final: "+media);
+    console.log(`Media Final: ${media}`);
 }
 
 function questao7(){
     salario*=1.1;
-    console.log("Novo Salario: "+salario);
+    console.log(`Novo Salario: ${salario}`);
 }
 
 function questao8(){
