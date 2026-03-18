@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HYPERION STORE — Sneakers</title>
+  <link rel="icon" type="image/svg+xml" href="fav.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" type="text/javascript" defer></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">HYPER<span>ION</span></a>
+    <ul class="nav-links">
+      <li><a href="#produtos">Tênis</a></li>
+      <li><a href="#marcas">Marcas</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="loja.html" class="nav-cta">Loja Online</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1800&q=80&fit=crop" alt="Tênis em destaque" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-overlay-red"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Nova Coleção 2026</p>
+      <h1 class="hero-title">AS MELHORES<br><em>MARCAS.</em></h1>
+      <p class="hero-sub">Nike, Adidas, New Balance, Jordan e muito mais. A Hyperion reúne os melhores lançamentos de tênis num só lugar — com curadoria, preço justo e entrega rápida.</p>
+      <div class="hero-actions">
+        <a href="#produtos" class="btn-red">Ver Coleção</a>
+        <a href="loja.html" class="btn-outline">Conheça a Loja</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><span>scroll</span><div class="hero-scroll-line"></div></div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>NIKE</span><span class="sep">✦</span><span>ADIDAS</span><span class="sep">✦</span><span>NEW BALANCE</span><span class="sep">✦</span><span>PUMA</span><span class="sep">✦</span><span>JORDAN</span><span class="sep">✦</span><span>CONVERSE</span><span class="sep">✦</span><span>VANS</span><span class="sep">✦</span><span>REEBOK</span><span class="sep">✦</span><span>ASICS</span><span class="sep">✦</span>
+      <span>NIKE</span><span class="sep">✦</span><span>ADIDAS</span><span class="sep">✦</span><span>NEW BALANCE</span><span class="sep">✦</span><span>PUMA</span><span class="sep">✦</span><span>JORDAN</span><span class="sep">✦</span><span>CONVERSE</span><span class="sep">✦</span><span>VANS</span><span class="sep">✦</span><span>REEBOK</span><span class="sep">✦</span><span>ASICS</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- BRANDS -->
+  <div class="brands" id="marcas">
+    <span class="brand-name">NIKE</span>
+    <span class="brand-name">ADIDAS</span>
+    <span class="brand-name">NEW BALANCE</span>
+    <span class="brand-name">JORDAN</span>
+    <span class="brand-name">PUMA</span>
+    <span class="brand-name">ASICS</span>
+    <span class="brand-name">MIZUNO</span>
+    <span class="brand-name">UNDER ARMOUR</span>
+    <span class="brand-name">FILA</span>
+    <span class="brand-name">REEBOK</span>
+    <span class="brand-name">CONVERSE</span>
+    <span class="brand-name">VANS</span>
+  </div>
+
+  <!-- PRODUTOS -->
+  <section class="products" id="produtos">
+    <div class="products-header reveal">
+      <div>
+        <div class="section-label">Destaques</div>
+        <h2 class="sec-title">LANÇAMENTOS<br>DA SEMANA</h2>
+      </div>
+      <a href="loja.html" class="see-all">Ver todos</a>
+    </div>
+    <div class="grid" id="indexProductGrid"></div>
+  </section>
+
+  <!-- PARALLAX BANNER 1 -->
+  <div class="pax pax-banner">
+    <div class="pax-bg" id="parallax1">
+      <img src="https://images.unsplash.com/photo-1556906781-9a412961a28c?w=1800&q=80&fit=crop" alt="Lifestyle sneakers" loading="lazy" />
+    </div>
+    <div class="pax-overlay-dark"></div>
+    <div class="pax-banner-content">
+      <div class="section-label">Estilo de Vida</div>
+      <h2 class="banner-title">CADA<br>PASSO<br><em>CONTA.</em></h2>
+      <p class="banner-sub">Da rua à academia — temos o par certo para cada momento da sua vida.</p>
+      <div class="banner-actions">
+        <a href="#" class="btn-red">Explorar</a>
+        <a href="#" class="btn-outline">Ver Lifestyle</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="features" id="sobre">
+    <div class="features-inner">
+      <div class="reveal">
+        <div class="section-label">Por que a Hyperion</div>
+        <h2 class="sec-title">A MELHOR<br>EXPERIÊNCIA<br><em style="color:var(--red);">EM TÊNIS.</em></h2>
+        <p style="margin-top:18px; font-size:0.95rem; line-height:1.8; color:#aaa; max-width:380px;">Não somos uma loja qualquer. Somos especialistas apaixonados que selecionam cada modelo com cuidado, garantindo autenticidade e qualidade em cada par.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feat reveal d1">
+          <div class="feat-icon">✅</div>
+          <div class="feat-name">100% Originais</div>
+          <p class="feat-desc">Parceria direta com distribuidoras oficiais. Zero falsificação, garantia de procedência.</p>
+        </div>
+        <div class="feat reveal d2">
+          <div class="feat-icon">🚀</div>
+          <div class="feat-name">Entrega Rápida</div>
+          <p class="feat-desc">Despacho em até 24h. Rastreamento em tempo real no seu celular.</p>
+        </div>
+        <div class="feat reveal d3">
+          <div class="feat-icon">🔄</div>
+          <div class="feat-name">Troca Fácil</div>
+          <p class="feat-desc">30 dias para troca ou devolução sem burocracia. Sem questionamento.</p>
+        </div>
+        <div class="feat reveal d4">
+          <div class="feat-icon">💳</div>
+          <div class="feat-name">Parcele em 12x</div>
+          <p class="feat-desc">Sem juros nas principais bandeiras. Pix com 5% de desconto extra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX STATS -->
+  <div class="pax pax-stats">
+    <div class="pax-bg" id="parallax2">
+      <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=1800&q=80&fit=crop" alt="Sneaker wall" loading="lazy" />
+    </div>
+    <div class="pax-overlay-heavy"></div>
+    <div class="pax-stats-content">
+      <div class="stat-row">
+        <div class="reveal">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Marcas Disponíveis</div>
+        </div>
+        <div class="reveal d1">
+          <div class="stat-num">18K</div>
+          <div class="stat-label">Clientes Satisfeitos</div>
+        </div>
+        <div class="reveal d2">
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Avaliação Média</div>
+        </div>
+        <div class="reveal d3">
+          <div class="stat-num">2K+</div>
+          <div class="stat-label">Modelos em Estoque</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="depoimentos">
+    <div class="reveal">
+      <div class="section-label">Depoimentos</div>
+      <h2 class="sec-title">O QUE NOSSOS<br>CLIENTES DIZEM</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review reveal">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Comprei o Jordan 1 e chegou em 2 dias, embalagem impecável e 100% original com nota fiscal. Melhor loja de tênis que já comprei online.</p>
+        <div class="review-author">
+          <div class="review-av">LC</div>
+          <div><div class="review-name">Lucas Carvalho</div><div class="review-loc">Belo Horizonte, MG</div></div>
+        </div>
+      </div>
+      <div class="review reveal d1">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Precisei trocar o número e foi o processo mais simples que já vi. Em 3 dias o par certo estava na minha porta. Recomendo sem hesitar.</p>
+        <div class="review-author">
+          <div class="review-av">AM</div>
+          <div><div class="review-name">Ana Martins</div><div class="review-loc">São Paulo, SP</div></div>
+        </div>
+      </div>
+      <div class="review reveal d2">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Variedade absurda de modelos. Encontrei um New Balance que estava procurando há meses e ainda paguei parcelado sem juros. Top demais.</p>
+        <div class="review-author">
+          <div class="review-av">RP</div>
+          <div><div class="review-name">Rafael Pinto</div><div class="review-loc">Porto Alegre, RS</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX CTA -->
+  <div class="pax pax-cta" id="contato">
+    <div class="pax-bg" id="parallax3">
+      <img src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=1800&q=80&fit=crop" alt="Promoção" loading="lazy" />
+    </div>
+    <div class="pax-overlay-left"></div>
+    <div class="pax-overlay-red-tint"></div>
+    <div class="pax-cta-content">
+      <div class="section-label">Oferta Exclusiva</div>
+      <h2 class="cta-title reveal">ATÉ 25%<br><em>NA PRIMEIRA</em><br>COMPRA</h2>
+      <p class="cta-sub reveal">Use o cupom abaixo no checkout. Válido para todos os modelos em estoque, primeira compra.</p>
+      <div class="cta-code reveal">
+        <span id="couponCode">HYPERION25</span>
+        <p>Clique para copiar</p>
+      </div>
+      <div class="cta-actions reveal">
+        <a href="loja.html" class="btn-red">Aproveitar Agora</a>
+        <a href="loja.html" class="btn-outline">Ver Promoções</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">HYPER<span>ION</span></div>
+        <p class="footer-desc">Multimarcas especializada em tênis originais. Nike, Adidas, Jordan e muito mais — num só lugar.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Categorias</div>
+        <ul class="footer-links">
+          <li><a href="#">Corrida</a></li>
+          <li><a href="#">Lifestyle</a></li>
+          <li><a href="#">Basketball</a></li>
+          <li><a href="#">Skate</a></li>
+          <li><a href="#">Lançamentos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Marcas</div>
+        <ul class="footer-links">
+          <li><a href="#">Nike</a></li>
+          <li><a href="#">Adidas</a></li>
+          <li><a href="#">New Balance</a></li>
+          <li><a href="#">Jordan</a></li>
+          <li><a href="#">Puma</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Ajuda</div>
+        <ul class="footer-links">
+          <li><a href="#">Rastrear Pedido</a></li>
+          <li><a href="#">Trocas e Devoluções</a></li>
+          <li><a href="#">Guia de Tamanhos</a></li>
+          <li><a href="#">Fale Conosco</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Hyperion Store. Todos os direitos reservados. By: Ryan Cerqueira Brandão</p>
+    </div>
+  </footer>
+</body>
+</html>
