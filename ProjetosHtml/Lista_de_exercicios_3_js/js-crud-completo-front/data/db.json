@@ -1,0 +1,24 @@
+{
+  "tasks": [
+    {
+      "description": "ler o diario de anne frank",
+      "finished": true,
+      "id": "c4nUnXzfCks"
+    }
+  ],
+  "peoples": [
+    {
+      "name": "Maria",
+      "id": "QBj9qsrf8NM"
+    },
+    {
+      "name": "João",
+      "id": "VQIfLG_dbF4"
+    },
+    {
+      "name": "Jesus",
+      "id": "5BnROqQ71t8"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
