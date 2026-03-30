@@ -3,26 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HYPERION STORE — Sneakers</title>
+  <title>HYPERION STORE — Sneakers Outlet</title>
   <link rel="icon" type="image/svg+xml" href="fav.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" type="text/javascript" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ── NAV ── -->
   <nav id="nav">
     <a href="#" class="nav-logo">HYPER<span>ION</span></a>
     <ul class="nav-links">
       <li><a href="#produtos">Tênis</a></li>
+      <li><a href="#categorias">Categorias</a></li>
       <li><a href="#marcas">Marcas</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="loja.html" class="nav-cta">Loja Online</a></li>
     </ul>
+    <div class="nav-icons">
+      <button class="nav-icon-btn" id="searchTrigger" title="Buscar" aria-label="Buscar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="nav-icon-btn" data-cart-open title="Carrinho" aria-label="Abrir carrinho">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-badge">0</span>
+      </button>
+      <button id="navToggle" aria-label="Menu">☰</button>
+    </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- Mobile menu -->
+  <div id="navMobile">
+    <a href="#produtos">Tênis</a>
+    <a href="#categorias">Categorias</a>
+    <a href="#marcas">Marcas</a>
+    <a href="#sobre">Sobre</a>
+    <a href="loja.html">Loja Online →</a>
+  </div>
+
+  <!-- ── SEARCH OVERLAY ── -->
+  <div id="searchOverlay">
+    <div class="search-overlay-inner">
+      <div class="search-overlay-bar">
+        <span class="search-overlay-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </span>
+        <input type="search" id="searchOverlayInput" placeholder="Buscar tênis, marcas..." autocomplete="off" />
+        <button id="searchClose">✕</button>
+      </div>
+      <div id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- ── CART DRAWER ── -->
+  <div id="drawerOverlay"></div>
+  <div id="cartDrawer">
+    <div class="cart-drawer-header">
+      <p class="cart-drawer-title">Carrinho</p>
+      <button id="cartDrawerClose">✕</button>
+    </div>
+    <div class="cart-drawer-body"></div>
+    <div class="cart-drawer-footer"></div>
+  </div>
+
+  <!-- ── HERO ── -->
   <section class="hero" id="home">
     <div class="hero-bg" id="heroBg">
       <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1800&q=80&fit=crop" alt="Tênis em destaque" />
@@ -30,26 +75,50 @@
     <div class="hero-overlay"></div>
     <div class="hero-overlay-red"></div>
     <div class="hero-content">
-      <p class="hero-tag">Nova Coleção 2026</p>
+      <p class="hero-tag">Outlet · Nova Coleção 2026</p>
       <h1 class="hero-title">AS MELHORES<br><em>MARCAS.</em></h1>
-      <p class="hero-sub">Nike, Adidas, New Balance, Jordan e muito mais. A Hyperion reúne os melhores lançamentos de tênis num só lugar — com curadoria, preço justo e entrega rápida.</p>
+      <p class="hero-sub">Nike, Adidas, New Balance, Jordan e muito mais. Curadoria premium, preço outlet — um único lugar.</p>
       <div class="hero-actions">
-        <a href="#produtos" class="btn-red">Ver Coleção</a>
-        <a href="loja.html" class="btn-outline">Conheça a Loja</a>
+        <a href="#produtos" class="btn-ember">Ver Coleção</a>
+        <a href="loja.html" class="btn-outline">Ir à Loja</a>
       </div>
     </div>
     <div class="hero-scroll"><span>scroll</span><div class="hero-scroll-line"></div></div>
   </section>
 
-  <!-- TICKER -->
+  <!-- ── TICKER ── -->
   <div class="ticker">
     <div class="ticker-inner">
-      <span>NIKE</span><span class="sep">✦</span><span>ADIDAS</span><span class="sep">✦</span><span>NEW BALANCE</span><span class="sep">✦</span><span>PUMA</span><span class="sep">✦</span><span>JORDAN</span><span class="sep">✦</span><span>CONVERSE</span><span class="sep">✦</span><span>VANS</span><span class="sep">✦</span><span>REEBOK</span><span class="sep">✦</span><span>ASICS</span><span class="sep">✦</span>
-      <span>NIKE</span><span class="sep">✦</span><span>ADIDAS</span><span class="sep">✦</span><span>NEW BALANCE</span><span class="sep">✦</span><span>PUMA</span><span class="sep">✦</span><span>JORDAN</span><span class="sep">✦</span><span>CONVERSE</span><span class="sep">✦</span><span>VANS</span><span class="sep">✦</span><span>REEBOK</span><span class="sep">✦</span><span>ASICS</span><span class="sep">✦</span>
+      <span>NIKE</span><span class="sep">✦</span><span>ADIDAS</span><span class="sep">✦</span><span>NEW BALANCE</span><span class="sep">✦</span><span>PUMA</span><span class="sep">✦</span><span>JORDAN</span><span class="sep">✦</span><span>CONVERSE</span><span class="sep">✦</span><span>VANS</span><span class="sep">✦</span><span>REEBOK</span><span class="sep">✦</span><span>ASICS</span><span class="sep">✦</span><span>MIZUNO</span><span class="sep">✦</span>
+      <span>NIKE</span><span class="sep">✦</span><span>ADIDAS</span><span class="sep">✦</span><span>NEW BALANCE</span><span class="sep">✦</span><span>PUMA</span><span class="sep">✦</span><span>JORDAN</span><span class="sep">✦</span><span>CONVERSE</span><span class="sep">✦</span><span>VANS</span><span class="sep">✦</span><span>REEBOK</span><span class="sep">✦</span><span>ASICS</span><span class="sep">✦</span><span>MIZUNO</span><span class="sep">✦</span>
     </div>
   </div>
 
-  <!-- BRANDS -->
+  <!-- ── PROMO STRIP ── -->
+  <div class="promo-strip">
+    <div class="promo-item">
+      <span class="pi-icon">🚚</span>
+      <span><strong>Frete grátis</strong> acima de R$ 900</span>
+    </div>
+    <div class="promo-item">
+      <span class="pi-icon">🔒</span>
+      <span><strong>100% originais</strong> com nota fiscal</span>
+    </div>
+    <div class="promo-item">
+      <span class="pi-icon">↩</span>
+      <span><strong>30 dias</strong> para troca sem burocracia</span>
+    </div>
+    <div class="promo-item">
+      <span class="pi-icon">💳</span>
+      <span>Parcelamento em <strong>12x sem juros</strong></span>
+    </div>
+    <div class="promo-item">
+      <span class="pi-icon">⚡</span>
+      <span>Pix com <strong>5% de desconto</strong></span>
+    </div>
+  </div>
+
+  <!-- ── BRANDS ── -->
   <div class="brands" id="marcas">
     <span class="brand-name">NIKE</span>
     <span class="brand-name">ADIDAS</span>
@@ -65,6 +134,7 @@
     <span class="brand-name">VANS</span>
   </div>
 
+  <!-- ── CATEGORIES ── -->
   <!-- PRODUTOS -->
   <section class="products" id="produtos">
     <div class="products-header reveal">
@@ -77,7 +147,42 @@
     <div class="grid" id="indexProductGrid"></div>
   </section>
 
-  <!-- PARALLAX BANNER 1 -->
+  <!-- CATEGORIES -->
+  <section class="categories" id="categorias">
+    <div class="reveal">
+      <div class="section-label">Explorar</div>
+      <h2 class="sec-title">COMPRE POR<br>CATEGORIA</h2>
+    </div>
+    <div class="categories-grid">
+      <a href="loja.html?cat=Corrida" class="cat-card reveal">
+        <span class="cat-icon">🏃</span>
+        <p class="cat-name">Corrida</p>
+        <p class="cat-count">6 modelos</p>
+      </a>
+      <a href="loja.html?cat=Lifestyle" class="cat-card reveal d1">
+        <span class="cat-icon">👟</span>
+        <p class="cat-name">Lifestyle</p>
+        <p class="cat-count">7 modelos</p>
+      </a>
+      <a href="loja.html?cat=Basquete" class="cat-card reveal d2">
+        <span class="cat-icon">🏀</span>
+        <p class="cat-name">Basquete</p>
+        <p class="cat-count">3 modelos</p>
+      </a>
+      <a href="loja.html?cat=Skate" class="cat-card reveal d3">
+        <span class="cat-icon">🛹</span>
+        <p class="cat-name">Skate</p>
+        <p class="cat-count">2 modelos</p>
+      </a>
+      <a href="loja.html?cat=Treino" class="cat-card reveal d4">
+        <span class="cat-icon">💪</span>
+        <p class="cat-name">Treino</p>
+        <p class="cat-count">1 modelo</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── PARALLAX BANNER 1 ── -->
   <div class="pax pax-banner">
     <div class="pax-bg" id="parallax1">
       <img src="https://images.unsplash.com/photo-1556906781-9a412961a28c?w=1800&q=80&fit=crop" alt="Lifestyle sneakers" loading="lazy" />
@@ -88,19 +193,19 @@
       <h2 class="banner-title">CADA<br>PASSO<br><em>CONTA.</em></h2>
       <p class="banner-sub">Da rua à academia — temos o par certo para cada momento da sua vida.</p>
       <div class="banner-actions">
-        <a href="#" class="btn-red">Explorar</a>
-        <a href="#" class="btn-outline">Ver Lifestyle</a>
+        <a href="loja.html" class="btn-ember">Explorar Loja</a>
+        <a href="loja.html?cat=Lifestyle" class="btn-outline">Ver Lifestyle</a>
       </div>
     </div>
   </div>
 
-  <!-- FEATURES -->
+  <!-- ── FEATURES ── -->
   <section class="features" id="sobre">
     <div class="features-inner">
       <div class="reveal">
         <div class="section-label">Por que a Hyperion</div>
-        <h2 class="sec-title">A MELHOR<br>EXPERIÊNCIA<br><em style="color:var(--red);">EM TÊNIS.</em></h2>
-        <p style="margin-top:18px; font-size:0.95rem; line-height:1.8; color:#aaa; max-width:380px;">Não somos uma loja qualquer. Somos especialistas apaixonados que selecionam cada modelo com cuidado, garantindo autenticidade e qualidade em cada par.</p>
+        <h2 class="sec-title">A MELHOR<br>EXPERIÊNCIA<br><em style="color:var(--ember);">EM TÊNIS.</em></h2>
+        <p style="margin-top:18px;font-size:0.92rem;line-height:1.82;color:var(--paper-dim);max-width:360px;">Somos especialistas apaixonados que selecionam cada modelo com cuidado, garantindo autenticidade e qualidade em cada par.</p>
       </div>
       <div class="features-grid">
         <div class="feat reveal d1">
@@ -127,7 +232,7 @@
     </div>
   </section>
 
-  <!-- PARALLAX STATS -->
+  <!-- ── STATS ── -->
   <div class="pax pax-stats">
     <div class="pax-bg" id="parallax2">
       <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=1800&q=80&fit=crop" alt="Sneaker wall" loading="lazy" />
@@ -136,26 +241,26 @@
     <div class="pax-stats-content">
       <div class="stat-row">
         <div class="reveal">
-          <div class="stat-num">50+</div>
+          <div class="stat-num" data-target="50" data-suffix="+">0+</div>
           <div class="stat-label">Marcas Disponíveis</div>
         </div>
         <div class="reveal d1">
-          <div class="stat-num">18K</div>
+          <div class="stat-num" data-target="18" data-suffix="K">0K</div>
           <div class="stat-label">Clientes Satisfeitos</div>
         </div>
         <div class="reveal d2">
-          <div class="stat-num">4.9★</div>
+          <div class="stat-num" data-target="4.9" data-suffix="★" data-decimals="1">0★</div>
           <div class="stat-label">Avaliação Média</div>
         </div>
         <div class="reveal d3">
-          <div class="stat-num">2K+</div>
+          <div class="stat-num" data-target="2" data-suffix="K+">0K+</div>
           <div class="stat-label">Modelos em Estoque</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- REVIEWS -->
+  <!-- ── REVIEWS ── -->
   <section class="reviews" id="depoimentos">
     <div class="reveal">
       <div class="section-label">Depoimentos</div>
@@ -183,7 +288,7 @@
       <div class="review reveal d2">
         <div class="review-quote">"</div>
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">Variedade absurda de modelos. Encontrei um New Balance que estava procurando há meses e ainda paguei parcelado sem juros. Top demais.</p>
+        <p class="review-text">Variedade absurda de modelos. Encontrei o New Balance que estava procurando há meses e ainda paguei parcelado sem juros. Top demais.</p>
         <div class="review-author">
           <div class="review-av">RP</div>
           <div><div class="review-name">Rafael Pinto</div><div class="review-loc">Porto Alegre, RS</div></div>
@@ -192,7 +297,7 @@
     </div>
   </section>
 
-  <!-- PARALLAX CTA -->
+  <!-- ── CTA PARALLAX ── -->
   <div class="pax pax-cta" id="contato">
     <div class="pax-bg" id="parallax3">
       <img src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=1800&q=80&fit=crop" alt="Promoção" loading="lazy" />
@@ -208,27 +313,53 @@
         <p>Clique para copiar</p>
       </div>
       <div class="cta-actions reveal">
-        <a href="loja.html" class="btn-red">Aproveitar Agora</a>
+        <a href="loja.html" class="btn-ember">Aproveitar Agora</a>
         <a href="loja.html" class="btn-outline">Ver Promoções</a>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- ── NEWSLETTER ── -->
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <div class="reveal">
+        <div class="section-label">Fique por dentro</div>
+        <h2>NOVIDADES &amp;<br><em>DROPS EXCLUSIVOS</em></h2>
+        <p>Receba em primeira mão lançamentos, ofertas relâmpago e acesso antecipado a drops limitados.</p>
+      </div>
+      <div class="reveal d1">
+        <form id="newsletterForm">
+          <div class="nl-form">
+            <input type="email" placeholder="Seu melhor e-mail" required autocomplete="email" />
+            <button type="submit">Cadastrar</button>
+          </div>
+          <p class="nl-msg"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
   <footer>
     <div class="footer-top">
       <div>
         <div class="footer-logo">HYPER<span>ION</span></div>
         <p class="footer-desc">Multimarcas especializada em tênis originais. Nike, Adidas, Jordan e muito mais — num só lugar.</p>
+        <div class="footer-socials">
+          <a href="#" class="soc" aria-label="Instagram">IG</a>
+          <a href="#" class="soc" aria-label="Twitter">TW</a>
+          <a href="#" class="soc" aria-label="TikTok">TK</a>
+          <a href="#" class="soc" aria-label="YouTube">YT</a>
+        </div>
       </div>
       <div>
         <div class="footer-col-title">Categorias</div>
         <ul class="footer-links">
-          <li><a href="#">Corrida</a></li>
-          <li><a href="#">Lifestyle</a></li>
-          <li><a href="#">Basketball</a></li>
-          <li><a href="#">Skate</a></li>
-          <li><a href="#">Lançamentos</a></li>
+          <li><a href="loja.html?cat=Corrida">Corrida</a></li>
+          <li><a href="loja.html?cat=Lifestyle">Lifestyle</a></li>
+          <li><a href="loja.html?cat=Basquete">Basketball</a></li>
+          <li><a href="loja.html?cat=Skate">Skate</a></li>
+          <li><a href="loja.html">Lançamentos</a></li>
         </ul>
       </div>
       <div>
@@ -256,5 +387,6 @@
       <p class="footer-copy">© 2026 Hyperion Store. Todos os direitos reservados. By: Ryan Cerqueira Brandão</p>
     </div>
   </footer>
+
 </body>
 </html>
