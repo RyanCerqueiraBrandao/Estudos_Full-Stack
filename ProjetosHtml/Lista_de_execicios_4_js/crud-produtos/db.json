@@ -1,0 +1,15 @@
+{
+  "produtos": [
+    {
+      "nome": "lapis",
+      "preco": "1",
+      "id": "f_zTxpWXsw8"
+    },
+    {
+      "nome": "lapiseira",
+      "preco": "1",
+      "id": "K24_F8nAqTM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
