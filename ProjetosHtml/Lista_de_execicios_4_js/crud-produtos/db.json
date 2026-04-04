@@ -6,9 +6,14 @@
       "id": "f_zTxpWXsw8"
     },
     {
+      "nome": "bahi",
+      "preco": "10",
+      "id": "ibUO9BXq8M4"
+    },
+    {
       "nome": "lapiseira",
-      "preco": "1",
-      "id": "K24_F8nAqTM"
+      "preco": "5",
+      "id": "FnRyrLHDcp4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
