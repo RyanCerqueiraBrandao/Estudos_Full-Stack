@@ -1,0 +1,50 @@
+{
+  "pensamentos": [
+    {
+      "id": "1",
+      "conteudo": "A imaginação é mais importante que o conhecimento.",
+      "autoria": "Albert Einstein"
+    },
+    {
+      "id": "2",
+      "conteudo": "A vida é aquilo que acontece enquanto você está ocupado fazendo outros planos.",
+      "autoria": "John Lennon"
+    },
+    {
+      "id": "3",
+      "conteudo": "No meio de toda dificuldade existe uma oportunidade.",
+      "autoria": "Albert Einstein"
+    },
+    {
+      "id": "4",
+      "conteudo": "Seja a mudança que você quer ver no mundo.",
+      "autoria": "Mahatma Gandhi"
+    },
+    {
+      "id": "5",
+      "conteudo": "O sucesso é ir de fracasso em fracasso sem perder o entusiasmo.",
+      "autoria": "Winston Churchill"
+    },
+    {
+      "id": "6",
+      "conteudo": "Tudo que temos de decidir é o que fazer com o tempo que nos é dado.",
+      "autoria": "J. R. R. Tolkien"
+    },
+    {
+      "id": "7",
+      "conteudo": "Não é o mais forte que sobrevive, nem o mais inteligente, mas o que melhor se adapta às mudanças.",
+      "autoria": "Charles Darwin"
+    },
+    {
+      "id": "8",
+      "conteudo": "A persistência é o caminho do êxito.",
+      "autoria": "Charles Chaplin"
+    },
+    {
+      "conteudo": "A imaginação é mais importante que o conhecimento.",
+      "autoria": "Albert Einstein",
+      "id": "bPvuiFoakIg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

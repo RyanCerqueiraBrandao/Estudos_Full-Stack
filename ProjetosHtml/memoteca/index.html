@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memoteca</title>
+  <link rel="icon" href="Favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page page--home">
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <img src="Logo.svg" alt="Memoteca" class="hero__logo" />
+        <p class="hero__lead">
+          Trechos de músicas,<br />
+          citações de livros e <strong>suas melhores ideias<br />num só lugar!</strong>
+        </p>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <img src="Colagem 1.png" alt="" />
+      </div>
+    </div>
+  </header>
+
+  <main class="main main--home">
+    <section class="cta-block container">
+      <h1 class="section-title">Adicione um pensamento novo:</h1>
+      <button class="btn btn--primary btn--pill" id="open-form-modal" type="button">
+        Adicionar pensamento
+      </button>
+    </section>
+
+    <section class="mural container" aria-labelledby="mural-title">
+      <div class="mural__header">
+        <hr> <br>
+        <h2 id="mural-title" class="section-title section-title--mural">Meu Mural</h2>
+      </div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <p class="empty-state__text">Nada por aqui ainda, que tal compartilhar alguma ideia?</p>
+        <img src="noun-empty-4160258-041832 1.png" alt="img">
+      </div>
+
+      <ul id="cards" class="cards" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <div class="modal modal--hidden" id="delete-modal" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+    <div class="modal__backdrop" data-close="true"></div>
+    <div class="modal__panel">
+      <h3 id="delete-modal-title" class="modal__title">Excluir pensamento</h3>
+      <p class="modal__text">Tem certeza que deseja excluir este pensamento?<br />Essa ação não poderá ser desfeita.</p>
+      <div class="modal__actions">
+        <button class="btn btn--secondary btn--pill" id="cancel-delete" type="button">Cancelar</button>
+        <button class="btn btn--primary btn--pill btn--danger" id="confirm-delete" type="button">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--hidden" id="form-modal" role="dialog" aria-modal="true" aria-labelledby="form-modal-title">
+    <div class="modal__backdrop" data-close-form="true"></div>
+    <div class="modal__panel modal__panel--form">
+      <button class="modal__close" id="close-form-modal" type="button" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+      <h3 id="form-modal-title" class="modal__title">Adicione um pensamento novo:</h3>
+
+      <div class="form-card form-card--modal">
+        <form id="thought-form" class="thought-form" autocomplete="off">
+          <input type="hidden" id="thought-id" />
+
+          <label class="field">
+            <span class="field__label">Pensamento</span>
+            <textarea
+              id="thought-content"
+              class="field__input field__input--textarea"
+              maxlength="300"
+              placeholder="Digite seu pensamento"
+              required
+            ></textarea>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Autor(a) ou fonte</span>
+            <input
+              id="thought-author"
+              class="field__input"
+              type="text"
+              maxlength="80"
+              placeholder="Insira o nome do(a) autor(a) ou fonte"
+              required
+            />
+          </label>
+
+          <div class="form-actions form-actions--centered">
+            <button type="button" class="btn btn--secondary btn--pill" id="cancel-form">Cancelar</button>
+            <button type="submit" class="btn btn--primary btn--pill" id="submit-form">Adicionar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer">
+    <div class="container footer__inner">© 2024 Desenvolvido por Alura. Projeto fictício sem fins comerciais.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
