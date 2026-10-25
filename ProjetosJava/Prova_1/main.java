@@ -1,7 +1,7 @@
 package Prova_1;
 
 public class main {
-    static void main() {
+    public static void main(String[] args) {
 
     }
 }
