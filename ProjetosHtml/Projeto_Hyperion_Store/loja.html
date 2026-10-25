@@ -5,45 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hyperion Store | Loja Online</title>
   <link rel="icon" type="image/svg+xml" href="fav.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body class="page-loja">
+
+  <!-- ── SEARCH OVERLAY ── -->
+  <div id="searchOverlay">
+    <div class="search-overlay-inner">
+      <div class="search-overlay-bar">
+        <span class="search-overlay-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </span>
+        <input type="search" id="searchOverlayInput" placeholder="Buscar tênis, marcas..." autocomplete="off" />
+        <button id="searchClose">✕</button>
+      </div>
+      <div id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- ── CART DRAWER ── -->
+  <div id="drawerOverlay"></div>
+  <div id="cartDrawer">
+    <div class="cart-drawer-header">
+      <p class="cart-drawer-title">Carrinho</p>
+      <button id="cartDrawerClose">✕</button>
+    </div>
+    <div class="cart-drawer-body"></div>
+    <div class="cart-drawer-footer"></div>
+  </div>
+
   <header class="store-header">
+    <div class="ember-blob"></div>
+
     <nav class="store-nav">
       <a href="index.html" class="nav-logo">HYPER<span>ION</span></a>
       <div class="nav-actions">
-        <a href="index.html" class="nav-cta">Voltar ao site</a>
+        <button class="nav-icon-btn" id="searchTrigger" title="Buscar">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="nav-icon-btn" data-cart-open title="Carrinho">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge">0</span>
+        </button>
+        <a href="index.html" class="nav-cta">← Voltar ao site</a>
       </div>
     </nav>
 
     <div class="hero-content">
       <p class="hero-label">Loja Online</p>
-      <h1>ENCONTRE O PAR<br /><em>CERTO PARA VOCE</em></h1>
-      <p>
-        Catalogo multimarcas com modelos de corrida, lifestyle, basquete e skate.
+      <h1>ENCONTRE O PAR<br /><em>CERTO PARA VOCÊ</em></h1>
+      <p class="hero-desc">
+        Catálogo multimarcas com modelos de corrida, lifestyle, basquete e skate.
         Pesquise pelo modelo e use os filtros para refinar rapidamente.
       </p>
     </div>
   </header>
 
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span>Nike</span><span class="dot">◆</span><span>Adidas</span><span class="dot">◆</span>
+      <span>New Balance</span><span class="dot">◆</span><span>Jordan</span><span class="dot">◆</span>
+      <span>Puma</span><span class="dot">◆</span><span>Asics</span><span class="dot">◆</span>
+      <span>Vans</span><span class="dot">◆</span><span>Converse</span><span class="dot">◆</span>
+      <span>Reebok</span><span class="dot">◆</span><span>Mizuno</span><span class="dot">◆</span>
+      <span>Nike</span><span class="dot">◆</span><span>Adidas</span><span class="dot">◆</span>
+      <span>New Balance</span><span class="dot">◆</span><span>Jordan</span><span class="dot">◆</span>
+      <span>Puma</span><span class="dot">◆</span><span>Asics</span><span class="dot">◆</span>
+      <span>Vans</span><span class="dot">◆</span><span>Converse</span><span class="dot">◆</span>
+      <span>Reebok</span><span class="dot">◆</span><span>Mizuno</span><span class="dot">◆</span>
+    </div>
+  </div>
+
   <main class="store-main" id="catalogo">
+
     <section class="toolbar">
       <div class="search-wrap">
         <label for="searchInput">Buscar por modelo ou marca</label>
-        <input type="search" id="searchInput" placeholder="Ex: Air Max, Gazelle, Kayano..." />
+        <input type="search" id="searchInput" placeholder="Ex: Air Max, Gazelle, Kayano..." autocomplete="off" />
       </div>
       <div class="sort-wrap">
         <label for="sortSelect">Ordenar por</label>
         <select id="sortSelect">
           <option value="featured">Destaques</option>
-          <option value="price-asc">Menor preco</option>
-          <option value="price-desc">Maior preco</option>
+          <option value="price-asc">Menor preço</option>
+          <option value="price-desc">Maior preço</option>
           <option value="name-asc">Nome (A-Z)</option>
+          <option value="sale">Maiores descontos</option>
         </select>
       </div>
     </section>
+
+    <!-- Category chips -->
+    <div class="cat-chips">
+      <button class="cat-chip active" data-cat="all">Todos</button>
+      <button class="cat-chip" data-cat="Corrida">Corrida</button>
+      <button class="cat-chip" data-cat="Lifestyle">Lifestyle</button>
+      <button class="cat-chip" data-cat="Basquete">Basquete</button>
+      <button class="cat-chip" data-cat="Skate">Skate</button>
+      <button class="cat-chip" data-cat="Treino">Treino</button>
+    </div>
 
     <section class="store-layout">
       <aside class="filters">
@@ -51,21 +113,18 @@
           <h2>Filtros</h2>
           <button id="clearFilters" type="button">Limpar</button>
         </div>
-
         <div class="filter-group">
           <h3>Marca</h3>
           <div id="brandFilters" class="filter-options"></div>
         </div>
-
         <div class="filter-group">
           <h3>Categoria</h3>
           <div id="categoryFilters" class="filter-options"></div>
         </div>
-
         <div class="filter-group">
-          <h3>Faixa de preco</h3>
+          <h3>Faixa de preço</h3>
           <input type="range" id="priceRange" min="300" max="2200" value="2200" step="50" />
-          <p class="range-value" id="priceValue">Ate R$ 2.200</p>
+          <p class="range-value" id="priceValue">Até R$ 2.200</p>
         </div>
       </aside>
 
@@ -79,8 +138,9 @@
   </main>
 
   <footer class="store-footer">
-    <p>(c) 2026 Hyperion Store. Selecao premium de tenis originais.</p>
+    <p>© 2026 Hyperion Store — Seleção premium de tênis originais.</p>
     <a href="index.html">Voltar para Home</a>
   </footer>
+
 </body>
 </html>
