@@ -14,6 +14,7 @@
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+
 body {
     background-color: var(--fundo);
     color: var(--texto);
@@ -131,7 +132,6 @@ fieldset {
     padding: 20px;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
     gap: 10px;
     margin: 2% 30%;
 }
@@ -185,7 +185,6 @@ button {
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
-  
 }
 
 button:hover {
@@ -206,17 +205,16 @@ form > div {
 .btn-inscrever {
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: var(--primaria);
     color: white;
     text-decoration: none; 
-    padding: 16px 32px;
+    padding: 1% 5%;
     font-size: 1.2rem;
     font-weight: bold;
     border-radius: 50px;
     text-transform: uppercase;
     box-shadow: 0 6px 15px rgba(197, 22, 22, 0.3);
-    margin: 20px 350px;
+    margin: 5% 30%;
     
 }
 
@@ -250,5 +248,16 @@ form > div {
 
 .lista li:last-child {
     border-bottom: none;
+}
+
+@media (max-width: 768px){
+    .destaques{
+    flex-direction: column;
+    }
+    #fieldindex{
+        margin: 2% 9%;
+        
+    }
+
 }
 
