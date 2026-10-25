@@ -1,4 +1,4 @@
-package com.example.gestaoprodutos;
+package com.example.gestaodeprodutos.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.gestaodeprodutos.R;
+import com.example.gestaodeprodutos.model.Produto;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
