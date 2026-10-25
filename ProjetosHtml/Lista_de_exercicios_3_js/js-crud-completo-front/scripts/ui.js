@@ -60,13 +60,10 @@ function criarLiTarefa(tarefa) {
 
     const btnRemover = document.createElement('button')
     btnRemover.textContent = 'Remover'
-    btnRemover.addEventListener('click', () => {
+    btnRemover.addEventListener('click', async () => {
         // TODO: invocar funcao da api de deletar uma task passando id
-        try {
-            api.deletarTask(tarefa.id)
-        } catch (error) {
-            alert(`Não Foi Possivel deletar a task`)
-        }
+        await api.deletarTask(tarefa.id)
+      
         carregarTarefas()
     })
 
