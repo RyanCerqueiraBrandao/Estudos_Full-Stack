@@ -90,7 +90,7 @@ input,select,textarea{
 }
 
 .inline{
-    display: flex;
+    display: inline;
     margin-top: 8px ;
     gap: 3px;
     flex-wrap: wrap;
