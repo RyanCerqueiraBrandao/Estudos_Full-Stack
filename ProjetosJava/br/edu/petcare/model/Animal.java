@@ -13,5 +13,7 @@ public class Animal {
         this.peso=peso;
         this.dono=dono;
     }
-    public void Animal(String nome,String especie,String raca,int idade,float peso)
+    public Animal Animal(String nome, String especie, String raca, int idade, float peso){
+        return null;
+    };
 }

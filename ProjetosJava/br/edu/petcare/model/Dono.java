@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class Dono extends Pessoa {
     private ArrayList<Animal> listaAnimais = new ArrayList<>();
+    private Animal a;
+
 
     public void adicionarAnimal(String nome,String especie, String raca, int idade, float peso){
-        listaAnimais.add(new Animal(nome,especie,raca,idade,peso));
+        listaAnimais.add(a.Animal(nome,especie,raca,idade,peso));
     };
 
     @Override
