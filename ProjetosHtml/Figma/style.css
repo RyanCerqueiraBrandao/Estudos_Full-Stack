@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --azuldark: #041832;
+    --azulmedio: #144480;
+    --azulneon: #2BDEFD;
+    --cinza: #444444;
+    --cinzamedio: #8f8f8f;
+    --cinzaclaro: #edf0f4;
+    --babyblue: #dbe4ef;
+    --branco: #ffffff;
+}
+
+header{
+    background-color: #041832;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    color: var(--branco);
+    gap: 20px;
+}
+
+#texto{
+    padding: 360px 112px 972px 112px;
+}
+
+
+
