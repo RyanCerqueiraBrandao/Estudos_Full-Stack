@@ -11,16 +11,29 @@ let nome=clienteNome.value
 let email=clienteEmail.value
 let vip=clienteVip.checked
 
-
-if (typeof nome !== "string" || nome.trim() === "") {
-  alert("Nome inválido!");
-  return;
+if(nome==""){
+alert("Nome inválido")
+return
 }
 
+if(/\d/.test(nome)){
+alert("O campo nome não pode conter números")
+return
+}
 
 if(!email.includes("@")){
 alert("Email inválido")
 return
+}
+
+if(email.length < 20){
+    alert("Email muito curto")
+    return
+}
+
+if(!email.includes(".com") && !email.includes(".br")){
+    alert("Email deve possuir .com ou .br")
+    return
 }
 
 clientes.push({nome,email,vip})
@@ -54,9 +67,34 @@ alert("Pet precisa de nome")
 return
 }
 
-if(!Number.isInteger(idade)){
-alert("Idade inválida!")
+if(tipo==""){
+alert("Pet precisa de um tipo")
 return
+}
+
+if(idade==""){
+alert("Pet precisa de uma idade")
+return
+}
+
+if(/\d/.test(nome)){
+alert("O campo nome não pode conter números")
+return
+}
+
+if(/\d/.test(tipo)){
+alert("O campo tipo não pode conter números")
+return
+}
+
+if(!/^-?\d+$/.test(petIdade.value)){
+    alert("A idade deve conter apenas números")
+    return
+}
+
+if(idade < 0){
+    alert("O campo idade não pode conter valor negativo")
+    return
 }
 
 pets.push({nome,tipo,idade})
@@ -81,18 +119,42 @@ listaPets.appendChild(li)
 
 function criarProduto(){
 
-let nome=produtoNome.value
-let preco=parseFloat(produtoPreco.value)
+    let nome=produtoNome.value
+    let preco=parseFloat(produtoPreco.value)
 
-if(preco<0){
-alert("Preço inválido")
-return
-}
+    if(nome==""){
+        alert("Produto precisa de nome")
+        return
+    }
 
-produtos.push({nome,preco})
+    if(/\d/.test(nome)){
+        alert("O campo nome não pode conter números")
+        return
+    }
 
-renderProdutos()
+    if(preco==""){
+        alert("Produto precisa de um preço")
+        return
+    }
 
+    if(!/^-?\d+$/.test(produtoPreco.value)){
+        alert("O produto deve conter apenas números")
+        return
+    }
+
+    if(preco<0){
+        alert("Preço inválido")
+        return
+    }
+
+    if(produtos.some(p => p.nome.toLowerCase() == nome.toLowerCase())){
+    alert("Esse produto já está cadastrado")
+    return 
+    }
+
+    produtos.push({nome,preco})
+
+    renderProdutos()
 }
 
 function renderProdutos(){
@@ -162,10 +224,6 @@ carrinho.forEach(p=>{
 total+=p.preco
 
 })
-
-if(total>100){
-total*=0.9
-}
 
 total=total.toFixed(2)
 
