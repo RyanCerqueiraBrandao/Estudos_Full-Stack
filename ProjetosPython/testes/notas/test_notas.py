@@ -9,5 +9,10 @@ class TesteNotas(unittest.TestCase):
          resultado = verificar_aprovacao(8)
 
          self.assertEqual(resultado, "Aprovado")
+
+    def test_aluno_reprovado(self):
+        resultado = verificar_aprovacao(5)
+
+        self.assertEqual(resultado.lower(), "reprovado")
 if __name__ == "__main__":
     unittest.main()

@@ -19,3 +19,12 @@ def validar_email(email):
         return True
     except EmailNotValidError :
         return False
+
+def desconto(valor,cliente_vip):
+    valor_com_desconto = valor
+    if(cliente_vip == True):
+        valor_com_desconto = valor*0.9
+        return valor_com_desconto
+    else:
+        return valor_com_desconto
+
