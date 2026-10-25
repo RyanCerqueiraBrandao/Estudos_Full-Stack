@@ -1,3 +1,5 @@
+package ObjetoGeometrico;
+
 public class circulo implements ObjetoGeometrico {
     private double raio,x,y;
     @Override
